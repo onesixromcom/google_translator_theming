@@ -1,0 +1,25 @@
+
+body {
+    top: 0px !important;
+}
+
+body > div.skiptranslate,
+iframe.goog-te-banner-frame {
+    display: none;
+    visibility: none;
+}
+
+#goog-gt-tt {
+    display: none !important;
+}
+
+.goog-text-highlight{
+    background-color: transparent !important;
+    -webkit-box-shadow:none !important;
+    -moz-box-shadow:none !important;
+    box-shadow:none !important;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    position:relative
+}
