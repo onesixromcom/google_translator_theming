@@ -14,6 +14,7 @@ function googleTranslateElementInit() {
 
 function languageSelectorOnclick(e) {
   e.preventDefault();
+  var theLang = this.getAttribute('data-lang');
 
   if (hasClass(this, "active")) {
     return;
@@ -38,8 +39,6 @@ function detectLanguageAttachClick() {
     lang_current = lang_current.split('/');
     lang_active = lang_current[lang_current.length - 1];
   }
-
-  setCookie('lang_active', lang_active);
 
   // Attach translation flag to wrapper.
   var div_wrapper = document.getElementById('wrapper');
