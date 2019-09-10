@@ -1,5 +1,8 @@
 /* Init language translator */
 
+/**
+ *  Main function to init Google translator
+ */
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'ru',
@@ -8,24 +11,57 @@ function googleTranslateElementInit() {
     autoDisplay: false,
     multilanguagePage: true
   }, 'google_translate_element');
-  detectLanguageAttachClick();
+  initLanguageSelector();
 }
 
+/**
+ * Click event for custom language selector.
+ * @param event
+ */
+function languageSelectorOnclick(event) {
+  event.preventDefault();
+  var element = event.target || event.srcElement;
+  if (element.nodeName === 'IMG')
+    element = element.parentNode;
 
-function languageSelectorOnclick(e) {
-  e.preventDefault();
-  var theLang = this.getAttribute('data-lang');
-
-  if (hasClass(this, "active")) {
+  if (hasClass(element, "active")) {
     return;
   }
 
-  window.location = this.getAttribute('href');
-  location.reload();
+  window.location = element.getAttribute('href');
+
+  checkActiveLanguage(element.getAttribute('data-lang'));
+  clickGoogleTranslatorLanguageSelector(element.getAttribute('data-lang-name'));
 }
 
-function detectLanguageAttachClick() {
+/**
+ * Add classes to active language in selector.
+ * @param lang_active
+ */
+function checkActiveLanguage(lang_active) {
+  // Attach translation flag to wrapper.
+  var div_wrapper = document.getElementById('wrapper');
+  addClass(div_wrapper, lang_active + '-translated');
 
+  Array.from(document.getElementsByClassName("lang-select")).forEach(
+    function(element, index, array) {
+
+      if (element.getAttribute('data-lang') !== lang_active){
+        removeClass(element, 'active');
+        removeClass(element.parentElement, 'active');
+        return;
+      }
+
+      addClass(element, 'active');
+      addClass(element.parentElement, 'active');
+    }
+  );
+}
+
+/**
+ * Check current active language from cookies or hash.
+ */
+function initLanguageSelector() {
   var lang_current = getCookie('googtrans');
   var lang_active = 'en';
 
@@ -40,22 +76,30 @@ function detectLanguageAttachClick() {
     lang_active = lang_current[lang_current.length - 1];
   }
 
-  // Attach translation flag to wrapper.
-  var div_wrapper = document.getElementById('wrapper');
-  addClass(div_wrapper, lang_active + '-translated');
+  checkActiveLanguage(lang_active);
 
-  var language_selectors = document.getElementsByClassName('lang-select');
-
-  for (var i = 0; i < language_selectors.length; i++) {
-    // Add class to active language.
-    if (language_selectors[i].getAttribute('data-lang') == lang_active) {
-      addClass(language_selectors[i], 'active');
-      addClass(language_selectors[i].parentElement, 'active');
+  Array.from(document.getElementsByClassName("lang-select")).forEach(
+    function(element, index, array) {
+       element.onclick = languageSelectorOnclick;
     }
-
-    language_selectors[i].onclick = languageSelectorOnclick;
-  }
-  document.getElementsByClassName('lang-select').onclick = languageSelectorOnclick;
+  );
 }
 
+/**
+ *  Click in Google Translator langauge selector.
+ * @param lang_clicked
+ */
+function clickGoogleTranslatorLanguageSelector(lang_clicked) {
+  var iff = document.getElementsByClassName('goog-te-menu-frame');
+  if (iff.length > 0) {
+    var menu = iff[0].contentDocument.getElementsByClassName('goog-te-menu2');
+    var items = menu[0].getElementsByClassName('goog-te-menu2-item');
 
+    for (var i = 0; i < items.length; i++) {
+      var lang_text = items[i].getElementsByClassName('text');
+      if (lang_text.length > 0 && lang_text[0].innerHTML === lang_clicked) {
+        items[i].click();
+      }
+    }
+  }
+}

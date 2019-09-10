@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="./assets/style.css">
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   <!-- <script type="text/javascript" src="./element_main.js"></script>
+    <script type="text/javascript" src="./main.js"></script>-->
     <script type="text/javascript" src="./assets/helpers.js"></script>
     <script type="text/javascript" src="./assets/script.js"></script>
 
@@ -18,14 +20,33 @@
         <div id="block-translator-selector">
             <div class="container">
                 <ul class="list-unstyled">
-                    <li><a href="#googtrans(ru|ru)" class="lang-ru lang-select notranslate" data-lang="ru" title="Русский"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAPCAYAAADgbT9oAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gsDFxI1xROP0wAAAHFJREFUOMvVkrEJgDAURN8PEZxBJ7F2BbG3chOncSebaCPYfSJBjEvkF74BHsfdicbUASvQUIYDGERjCkBLWYJoTBkDHEZIfh+TxL5fNpPEvq6EX3VsJvbNfdm84hxnm1e4/P5vvN3AuztgArSgVIHpAwouHrkMUY8yAAAAAElFTkSuQmCC" alt="Русский"></a></li>
-                    <li><a href="#googtrans(ru|en)" class="lang-en lang-select notranslate" data-lang="en" title="English"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAPCAYAAADgbT9oAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gsDFxIJ6nzzVAAAAwFJREFUOMuVkn9M1GUcx1/P8/0ed/w4Ts/bsvNiyIjaRNihhs2y6daalgTpglZbc3Oo1XJr/pit/mJOrjW3QmvdauuPlsxojlzp8gcw3aQoIq1pwkBDEgZ6onB3X+77fZ7+gDEuMuz58/N57/V83u/PR6itOx4/vHhtU1O3Co7dtZBSMPMJITj0SghfNArAaG0tr39xHa11mk5pTXa2m6pC+dfLf7ZuksdKn/1qw8UTwUPBXsJlIVK24v++lK1YUhzkYF4/lb8dD54pfeaI/KDl1qIPS2tIKkFd9xHeLHMxL+BFKT0nUCmN15/D9mVuItePohJJomU11LeMhqTLEJztHGR7b4jWtdWs+aONBu8Fiov8/wlXSlOU7+OjwGWe/v0UHWteYNtAAad+GsIlQU4rtSZytJ99ofXczppPZOQEe8LgDeSkfaCUxpObxVvLTA6MnyHu8vD+4g282zSAYzvTOjM315M2Sd/wBG/LILvWhVlxrJEnih/B8i8kNdUP+LP4MtzDRPvPXKmspu77GNq2CPgz05eefK/hX/xqbAe0YaCVQsdGsXuuTk5SmI+c7wMpEY6DaQCIWQRzvOPC/a1+6gzt3mtpZeseclPHE3NDDYlwuye9WBY4c5+kaOkaSYtCaw2GQfmDgoy+PmRBPskbwyTe2Q+Ap24v7ocWQncvdl4eP4xIVMpGiPQ4zPr602mFTG8mkVWS5LfN3Fz9FLs/vca+5x/AN9Uf6r/JzgMXiazULIgcJH/denZ3ebg9PMZM9vS5KdOkKpzLZ74ugr+00xyuYGtnDrE7E7NsJiyHN84ZNC7fyLwrl4ga56kJZyPcGaBngLM9Jg1PSl7s+JqxgiJqWUXjr3FUwpplcSpBhJ2iuesur8ZKGFy6nMrOb/i43MLndU1GUV2SNVAx+OMiz9UMoksqONmewrFG7wH8B15A4k6CHa0Gqx9+jtduXOaTjBjflTw2IF9q+3zzWOGj49usco5fiqMm7PuCzoRjO7T1xNlyaylDpSvGq84d3vw3cPUn+Vl7xxcAAAAASUVORK5CYII=" alt="English"></a></li>
-                    <li><a href="#googtrans(ru|uk)" class="lang-uk lang-select notranslate" data-lang="uk" title="Українська"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAPCAYAAADgbT9oAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gsDFxIh38lbrgAAAGdJREFUOMvt0j0NgDAQQOHXC5jgxwULEzszBuoBE1iBqmFmLQ66kJCyIOFuIOEJ+KbnxuXogQBU6HQCkwCbIsprrQLU6NcIRn0PLq67tIHnLtjAQ7vbwDm7/wp7OBq4UQAPJEU0Af4BuiUQwQcQBfYAAAAASUVORK5CYII=" alt="Українська"></a></li>
-                    <li><a href="#googtrans(ru|es)" class="lang-es lang-select notranslate" data-lang="es" title="Español"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAPCAYAAADgbT9oAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gsDFxIqSBuCJgAAAM9JREFUOMu10zEOAVEQxvH/vH1rsxKFSoJonUEhcYh1AIUDuJEaF1Gg05OsTiPZCLt2FDbo39tpZqrfm0y+J9fpfARsgC5+6gIkBlh7RKmsldWn9PBffdFdojXAWKSagqobhVKgBNQFBjDw2EYQKvkpJBwUNIZPJFZHWOBxjCjOwWc+RLQXuQcYQPR7Dgncz24AKCFol783GiBWPcAK8eSO7byQUInHd6TpBovu/+Kmn+2/CXGJW5FaasnxbdmqB8aQAr6/dWqAGZB5RDNg9gbTijfudZjMBgAAAABJRU5ErkJggg==" alt="Español"></a></li>
+                    <li>
+                        <a href="#googtrans(ru|ru)" class="lang-ru lang-select notranslate" data-lang-name="Russian"
+                           data-lang="ru" title="Русский">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAPCAYAAADgbT9oAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gsDFxI1xROP0wAAAHFJREFUOMvVkrEJgDAURN8PEZxBJ7F2BbG3chOncSebaCPYfSJBjEvkF74BHsfdicbUASvQUIYDGERjCkBLWYJoTBkDHEZIfh+TxL5fNpPEvq6EX3VsJvbNfdm84hxnm1e4/P5vvN3AuztgArSgVIHpAwouHrkMUY8yAAAAAElFTkSuQmCC"
+                                 alt="Русский">
+                        </a>
+                    </li>
+                    <li><a href="#googtrans(ru|en)" class="lang-en lang-select notranslate" data-lang-name="English"
+                           data-lang="en"
+                           title="English"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAPCAYAAADgbT9oAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gsDFxIJ6nzzVAAAAwFJREFUOMuVkn9M1GUcx1/P8/0ed/w4Ts/bsvNiyIjaRNihhs2y6daalgTpglZbc3Oo1XJr/pit/mJOrjW3QmvdauuPlsxojlzp8gcw3aQoIq1pwkBDEgZ6onB3X+77fZ7+gDEuMuz58/N57/V83u/PR6itOx4/vHhtU1O3Co7dtZBSMPMJITj0SghfNArAaG0tr39xHa11mk5pTXa2m6pC+dfLf7ZuksdKn/1qw8UTwUPBXsJlIVK24v++lK1YUhzkYF4/lb8dD54pfeaI/KDl1qIPS2tIKkFd9xHeLHMxL+BFKT0nUCmN15/D9mVuItePohJJomU11LeMhqTLEJztHGR7b4jWtdWs+aONBu8Fiov8/wlXSlOU7+OjwGWe/v0UHWteYNtAAad+GsIlQU4rtSZytJ99ofXczppPZOQEe8LgDeSkfaCUxpObxVvLTA6MnyHu8vD+4g282zSAYzvTOjM315M2Sd/wBG/LILvWhVlxrJEnih/B8i8kNdUP+LP4MtzDRPvPXKmspu77GNq2CPgz05eefK/hX/xqbAe0YaCVQsdGsXuuTk5SmI+c7wMpEY6DaQCIWQRzvOPC/a1+6gzt3mtpZeseclPHE3NDDYlwuye9WBY4c5+kaOkaSYtCaw2GQfmDgoy+PmRBPskbwyTe2Q+Ap24v7ocWQncvdl4eP4xIVMpGiPQ4zPr602mFTG8mkVWS5LfN3Fz9FLs/vca+5x/AN9Uf6r/JzgMXiazULIgcJH/denZ3ebg9PMZM9vS5KdOkKpzLZ74ugr+00xyuYGtnDrE7E7NsJiyHN84ZNC7fyLwrl4ga56kJZyPcGaBngLM9Jg1PSl7s+JqxgiJqWUXjr3FUwpplcSpBhJ2iuesur8ZKGFy6nMrOb/i43MLndU1GUV2SNVAx+OMiz9UMoksqONmewrFG7wH8B15A4k6CHa0Gqx9+jtduXOaTjBjflTw2IF9q+3zzWOGj49usco5fiqMm7PuCzoRjO7T1xNlyaylDpSvGq84d3vw3cPUn+Vl7xxcAAAAASUVORK5CYII="
+                            alt="English"></a></li>
+                    <li><a href="#googtrans(ru|uk)" class="lang-uk lang-select notranslate" data-lang-name="Ukrainian"
+                           data-lang="uk"
+                           title="Українська"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAPCAYAAADgbT9oAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gsDFxIh38lbrgAAAGdJREFUOMvt0j0NgDAQQOHXC5jgxwULEzszBuoBE1iBqmFmLQ66kJCyIOFuIOEJ+KbnxuXogQBU6HQCkwCbIsprrQLU6NcIRn0PLq67tIHnLtjAQ7vbwDm7/wp7OBq4UQAPJEU0Af4BuiUQwQcQBfYAAAAASUVORK5CYII="
+                            alt="Українська"></a></li>
+                    <li><a href="#googtrans(ru|es)" class="lang-es lang-select notranslate" data-lang-name="Spanish"
+                           data-lang="es"
+                           title="Español"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAPCAYAAADgbT9oAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gsDFxIqSBuCJgAAAM9JREFUOMu10zEOAVEQxvH/vH1rsxKFSoJonUEhcYh1AIUDuJEaF1Gg05OsTiPZCLt2FDbo39tpZqrfm0y+J9fpfARsgC5+6gIkBlh7RKmsldWn9PBffdFdojXAWKSagqobhVKgBNQFBjDw2EYQKvkpJBwUNIZPJFZHWOBxjCjOwWc+RLQXuQcYQPR7Dgncz24AKCFol783GiBWPcAK8eSO7byQUInHd6TpBovu/+Kmn+2/CXGJW5FaasnxbdmqB8aQAr6/dWqAGZB5RDNg9gbTijfudZjMBgAAAABJRU5ErkJggg=="
+                            alt="Español"></a></li>
                 </ul>
             </div>
         </div>
     </div>
+
 
 </body>
 </html>
